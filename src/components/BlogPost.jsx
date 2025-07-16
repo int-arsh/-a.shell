@@ -19,6 +19,18 @@ const blogs = [
   }
 ];
 
+const boldWords = ['blog', 'blogs'];
+
+function wrapWords(text) {
+  return text.split(/(\s+)/).map((word, i) => {
+    const cleanWord = word.replace(/[^a-zA-Z]/g, '').toLowerCase();
+    if (boldWords.includes(cleanWord)) {
+      return word.trim() ? <span className="word" key={i}><strong>{word}</strong></span> : word;
+    }
+    return word.trim() ? <span className="word" key={i}>{word}</span> : word;
+  });
+}
+
 function BlogPost() {
   const { blogName } = useParams();
   const blog = blogs.find(b => b.name === blogName);
@@ -29,8 +41,8 @@ function BlogPost() {
 
   return (
     <article className="blog-post">
-      <h2>{blog.title}</h2>
-      <div className="blog-content">{blog.content}</div>
+      <h2>{wrapWords(blog.title)}</h2>
+      <div className="blog-content">{wrapWords(blog.content)}</div>
     </article>
   );
 }

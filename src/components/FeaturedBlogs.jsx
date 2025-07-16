@@ -14,15 +14,27 @@ const featuredBlogs = [
   }
 ];
 
+const boldWords = ['blog', 'blogs'];
+
+function wrapWords(text) {
+  return text.split(/(\s+)/).map((word, i) => {
+    const cleanWord = word.replace(/[^a-zA-Z]/g, '').toLowerCase();
+    if (boldWords.includes(cleanWord)) {
+      return word.trim() ? <span className="word" key={i}><strong>{word}</strong></span> : word;
+    }
+    return word.trim() ? <span className="word" key={i}>{word}</span> : word;
+  });
+}
+
 function FeaturedBlogs() {
   return (
     <section className="featured-blogs">
-      <h2>Featured Blogs</h2>
+      <h2>{wrapWords('Featured Blogs')}</h2>
       <ul>
         {featuredBlogs.map((blog, idx) => (
           <li key={idx} className="featured-blog-item">
-            <Link to={`/blogs/${blog.name}`} className="blog-title">{blog.title}</Link><br />
-            <span className="blog-excerpt">{blog.excerpt}</span>
+            <Link to={`/blogs/${blog.name}`} className="blog-title">{wrapWords(blog.title)}</Link><br />
+            <span className="blog-excerpt">{wrapWords(blog.excerpt)}</span>
           </li>
         ))}
       </ul>

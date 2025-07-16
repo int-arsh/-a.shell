@@ -63,15 +63,21 @@ const projects = [
     },
 ];
 
+function wrapWords(text) {
+  return text.split(/(\s+)/).map((word, i) =>
+    word.trim() ? <span className="word" key={i}>{word}</span> : word
+  );
+}
+
 function ProjectsList() {
   return (
     <section className="projects-list">
-      <h2>Projects</h2>
+      <h2>{wrapWords('Projects')}</h2>
       <ul>
         {projects.map((project, idx) => (
           <li key={idx} className="project-item">
-            <strong>{project.title}</strong><br />
-            <span>{project.description}</span><br />
+            <strong>{wrapWords(project.title)}</strong><br />
+            <span>{wrapWords(project.description)}</span><br />
             {project.github_link && <a href={project.github_link} target="_blank" rel="noopener noreferrer">Code</a>}
             {project.live_link && <a href={project.live_link} target="_blank" rel="noopener noreferrer">Visit</a>}
           </li>

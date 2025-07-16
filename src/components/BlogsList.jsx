@@ -19,15 +19,27 @@ const blogs = [
   }
 ];
 
+const boldWords = ['blog', 'blogs'];
+
+function wrapWords(text) {
+  return text.split(/(\s+)/).map((word, i) => {
+    const cleanWord = word.replace(/[^a-zA-Z]/g, '').toLowerCase();
+    if (boldWords.includes(cleanWord)) {
+      return word.trim() ? <span className="word" key={i}><strong>{word}</strong></span> : word;
+    }
+    return word.trim() ? <span className="word" key={i}>{word}</span> : word;
+  });
+}
+
 function BlogsList() {
   return (
     <section className="blogs-list">
-      <h2>Blogs</h2>
+      <h2>{wrapWords('Blogs')}</h2>
       <ul>
         {blogs.map((blog, idx) => (
           <li key={idx} className="blog-item">
-            <Link to={`/blogs/${blog.name}`} className="blog-title">{blog.title}</Link><br />
-            <span className="blog-excerpt">{blog.excerpt}</span>
+            <Link to={`/blogs/${blog.name}`} className="blog-title">{wrapWords(blog.title)}</Link><br />
+            <span className="blog-excerpt">{wrapWords(blog.excerpt)}</span>
           </li>
         ))}
       </ul>
