@@ -5,38 +5,7 @@ const blogs = [
   {
     name: 'truth-and-simplicity',
     title: 'Truth and Simplicity',
-    content: `Minimalism is not just a design choice, but a way of life. In this post, we explore how simplicity leads to clarity and truth, both in code and in life.
-    qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
-    qqqqqqqqqqqqqqqq
-    qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
-    qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
-    qqqqqqqqqqqqqqqqqqqqqqqqqqq
-    qqqqqqqqqqqqqqqqq
-    qqqqqqqqqqq
-    qqqqqqqqqqqqqq
-    qqqqqqqqq
-    qqqqqqqqqq
-    qqqqqqqqqqqqq
-    qqqqqqqqqqqqqq
-    qqqqqqqqqqqqqq
-    qqqqqqqqqqqqqqqqq
-    qqqqqqqqqqqqqqqq
-    qqqqqqqqqqqqqqqqqqq
-    qqqqqqqqqqqqqqq
-    qqqqqqqqqq
-    qqqqqqqqq
-    qqqqqqqqqqqqqqqq
-    dssas
-    dass
-    dsdwerf
-    rfrferger
-    ererferferf
-    referferferf
-    erfererferf
-    erferf
-    erferferfr
-    ferrferf
-    dasdasd`
+    content: `Minimalism is not just a design choice, but a way of life. In this post, we explore how simplicity leads to clarity and truth, both in code and in life.`
   },
   {
     name: 'building-with-react',
