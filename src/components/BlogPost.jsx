@@ -1,0 +1,69 @@
+import { useParams } from 'react-router-dom';
+import '../App.css';
+
+const blogs = [
+  {
+    name: 'truth-and-simplicity',
+    title: 'Truth and Simplicity',
+    content: `Minimalism is not just a design choice, but a way of life. In this post, we explore how simplicity leads to clarity and truth, both in code and in life.
+    qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
+    qqqqqqqqqqqqqqqq
+    qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
+    qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
+    qqqqqqqqqqqqqqqqqqqqqqqqqqq
+    qqqqqqqqqqqqqqqqq
+    qqqqqqqqqqq
+    qqqqqqqqqqqqqq
+    qqqqqqqqq
+    qqqqqqqqqq
+    qqqqqqqqqqqqq
+    qqqqqqqqqqqqqq
+    qqqqqqqqqqqqqq
+    qqqqqqqqqqqqqqqqq
+    qqqqqqqqqqqqqqqq
+    qqqqqqqqqqqqqqqqqqq
+    qqqqqqqqqqqqqqq
+    qqqqqqqqqq
+    qqqqqqqqq
+    qqqqqqqqqqqqqqqq
+    dssas
+    dass
+    dsdwerf
+    rfrferger
+    ererferferf
+    referferferf
+    erfererferf
+    erferf
+    erferferfr
+    ferrferf
+    dasdasd`
+  },
+  {
+    name: 'building-with-react',
+    title: 'Building with React',
+    content: `React and Bun make it easy to build fast, honest, and minimal personal sites. Here is how I approached building mine.`
+  },
+  {
+    name: 'open-source-journey',
+    title: 'Open Source Journey',
+    content: `Contributing to open source is about sharing, learning, and growing together. Here are some lessons from my journey.`
+  }
+];
+
+function BlogPost() {
+  const { blogName } = useParams();
+  const blog = blogs.find(b => b.name === blogName);
+
+  if (!blog) {
+    return <div className="blog-post"><h2>Blog not found</h2></div>;
+  }
+
+  return (
+    <article className="blog-post">
+      <h2>{blog.title}</h2>
+      <div className="blog-content">{blog.content}</div>
+    </article>
+  );
+}
+
+export default BlogPost; 
