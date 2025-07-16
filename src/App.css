@@ -297,7 +297,7 @@ body, html {
 }
 
 /* Highlight any word on hover */
-.word:hover { cursor: pointer; }
+
 .word:nth-child(5n+1):hover { color: #e63946; } /* red */
 .word:nth-child(5n+2):hover { color: #f1c40f; } /* yellow */
 .word:nth-child(5n+3):hover { color: #2ecc71; } /* green */
