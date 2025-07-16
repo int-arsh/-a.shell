@@ -1,10 +1,12 @@
+
 body, html {
-  font-family: 'Fira Mono', serif;
+  font-family: 'Doto', serif;
   background: #f6f3e6;
   color: #222;
   height: 100%;
   min-height: 100vh;
 }
+
 
 .site-container {
   min-height: 100vh;
@@ -211,6 +213,9 @@ body, html {
 }
 .project-item a:hover {
   text-decoration: underline;
+  color: #007663;
+  transform: scale(1.1);
+  transition: transform 0.1s;
 }
 .project-item a + a {
   margin-left: 20px;
