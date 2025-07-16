@@ -297,10 +297,12 @@ body, html {
 }
 
 /* Highlight any word on hover */
-.word:hover {
-  color: red;
-  cursor: pointer;
-}
+.word:hover { cursor: pointer; }
+.word:nth-child(5n+1):hover { color: #e63946; } /* red */
+.word:nth-child(5n+2):hover { color: #f1c40f; } /* yellow */
+.word:nth-child(5n+3):hover { color: #2ecc71; } /* green */
+.word:nth-child(5n+4):hover { color: #3498db; } /* blue */
+.word:nth-child(5n):hover   { color: #9b59b6; } /* purple */
 
 @media (max-width: 900px) {
   .header, .footer, .main-content {
