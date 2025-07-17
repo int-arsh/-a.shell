@@ -1,33 +1,36 @@
-import React, { useState, useEffect } from "react";
-import "../App.css"; // add styles from next block
+import React, { useState, useEffect, useRef } from "react";
+import "../App.css";
 
-const Terminal = () => {
+const TerminalSection = () => {
   const [history, setHistory] = useState([
-    "> Type 'help' or 'commands' to sneak"
+    "> Type 'help' to begin."
   ]);
   const [input, setInput] = useState("");
   const [isTyping, setIsTyping] = useState(false);
 
+  const inputRef = useRef(null);
+  const terminalRef = useRef(null);
+
   const responses = {
     whoami: [
-      "Hi, I'm Akash Jain.",
-      "I build things with logic and code."
+      " ~ Hi, I'm Akash Jain.",
+      " ~ I build things with logic and code."
     ],
     projects: [
       "- Portfolio: github.com/int-arsh/portfolio",
       "- Shell: github.com/int-arsh/a-shell"
     ],
     connect: [
-      "GitHub: https://github.com/int-arsh",
-      "Email: jainaakash303@gmail.com"
+      " ~ GitHub: https://github.com/int-arsh",
+      " ~ Email: akash@example.com"
     ],
     help: [
-      "Available commands:",
-      "> whoami",
-      "> projects",
-      "> connect",
-      "> clear",
-      "> help"
+      " ~ Available commands:",
+      "  > whoami",
+      "  > projects",
+      "  > connect",
+      "  > clear",
+      "  > help"
     ]
   };
 
@@ -47,40 +50,47 @@ const Terminal = () => {
     } else if (responses[cmd]) {
       simulateTyping(responses[cmd]);
     } else {
-      setHistory((prev) => [...prev, `> ${command}`, "command not found"]);
+      setHistory((prev) => [...prev, `>> ${command}`, "command not found"]);
     }
   };
 
-  const handleKeyDown = (e) => {
-    if (e.key === "Enter") {
-      setHistory((prev) => [...prev, `> ${input}`]);
-      handleCommand(input);
-      setInput("");
-    } else if (e.key.length === 1 || e.key === "Backspace") {
-      setInput((prev) =>
-        e.key === "Backspace" ? prev.slice(0, -1) : prev + e.key
-      );
-    }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!input.trim()) return;
+    setHistory((prev) => [...prev, `$ ${input}`]);
+    handleCommand(input);
+    setInput("");
   };
 
   useEffect(() => {
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  });
+    terminalRef.current?.scrollTo(0, terminalRef.current.scrollHeight);
+  }, [history]);
 
   return (
-    <div className="terminal">
+    <div className="terminal" onClick={() => inputRef.current.focus()} ref={terminalRef}>
       {history.map((line, idx) => (
         <div key={idx}>{line}</div>
       ))}
+
       {!isTyping && (
-        <div>
-          <span>&gt; {input}</span>
-          <span className="cursor" />
-        </div>
+        <form onSubmit={handleSubmit} className="terminal-line">
+          <span>$</span>
+          <div className="input-wrapper" onClick={() => inputRef.current.focus()}>
+            <span className="fake-input">{input}</span>
+            <div className="block-cursor" />
+            <input
+              ref={inputRef}
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              className="real-input"
+              autoFocus
+              autoComplete="off"
+            />
+          </div>
+        </form>
       )}
     </div>
   );
 };
 
-export default Terminal;
+export default TerminalSection;
