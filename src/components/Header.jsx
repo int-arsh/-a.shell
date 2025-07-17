@@ -9,13 +9,15 @@ function Header() {
   return (
     <header className="header">
       <nav className="navbar">
-        <Link to="/" className={`logo-link${isHome ? ' logo-flashy' : ''}`}>
+        <Link to="/" className={`logo-link${isHome ? 'logo-flashy' : ''}`} onClick={() => {
+          window.dispatchEvent(new CustomEvent('matrix'));
+        }}>
           <span className="logo-img" title="Zarathustra">
             <img src={Logo} alt="logo" style={{ height: '40px', width: '40px', verticalAlign: 'middle' }} />
           </span>
         </Link>
         <div className="nav-links">
-          <Link to="/cli">CLI</Link>
+          <Link to="/">CLI</Link>
           <Link to="/projects">Projects</Link>
           <Link to="/blogs">Blogs</Link>
         </div>
