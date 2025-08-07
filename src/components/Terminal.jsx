@@ -21,8 +21,9 @@ const Terminal = () => {
       "- Shell: github.com/int-arsh/a-shell"
     ],
     connect: [
-      " ~ GitHub: https://github.com/int-arsh",
-      " ~ Email: akash@example.com"
+      " ~ GitHub: <a href='https://github.com/int-arsh' target='_blank' rel='noopener noreferrer'>https://github.com/int-arsh</a>",
+      " ~ Email: <a href='mailto:akash.mbu32@gmail.com'>akash.mbu32@gmail.com</a>",
+      " ~ Twitter: <a href='' target='_blank' rel='noopener noreferrer'>https://x.com/roguekernel</a>"
     ],
     help: [
       " ~ Available commands:",
@@ -153,7 +154,7 @@ const Terminal = () => {
   return (
     <div className="terminal" onClick={() => inputRef.current.focus()} ref={terminalRef}>
       {history.map((line, idx) => (
-        <div key={idx}>{line}</div>
+        <div key={idx} dangerouslySetInnerHTML={{ __html: line }} />
       ))}
 
       {!isTyping && (

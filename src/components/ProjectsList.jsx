@@ -2,10 +2,34 @@ import '../App.css';
 
 const projects = [
     {
+        title: 'Nihilist kernel',
+        description: 'It is a dialogue engine that explores the intersection of computer science and philosophy.',
+        github_link: 'https://github.com/int-arsh/nihilist-kernel',
+        live_link: 'https://nihilist-kernel.vercel.app/'
+    },
+    {
+        title: 'Book-shelf',
+        description: 'Currenty working...',
+        github_link: 'https://github.com/int-arsh/book-shelf',
+        live_link: ''
+    },
+    {
+        title: 'gmnx',
+        description: 'A zsh command-line tool using the Google Gemini API for help with commands, code, and explanations.',
+        github_link: 'https://github.com/int-arsh/gmnx',
+        live_link: ''
+    },
+    {
         title: 'Chess-Engine',
-        description: 'A Python-based chess engine implementing chess rules, move generation, and AI algorithms for playing chess.',
+        description: 'A chess engine created in Python using the Pygame library. This project allows users to play chess against an AI or another player, with a graphical interface powered by Pygame',
         github_link: 'https://github.com/int-arsh/Chess-Engine',
         live_link: ''
+    },
+    {
+        title: 'Palletron',
+        description: 'A web-based interactive tool or game involving color palettes or patterns, developed using JavaScript, CSS, and HTML.',
+        github_link: 'https://github.com/int-arsh/Palletron',
+        live_link: 'https://palletron.vercel.app/'
     },
     {
         title: 'CineCache',
@@ -30,30 +54,6 @@ const projects = [
         description: 'A JavaScript-based web app focused on music or audio visualization and analysis.',
         github_link: 'https://github.com/int-arsh/TuneTrace',
         live_link: 'https://tune-trace-pink.vercel.app/'
-    },
-    {
-        title: 'super-To-Do',
-        description: 'A productivity web app with a rich frontend interface for managing to-do lists, built with JavaScript, CSS, and HTML.',
-        github_link: 'https://github.com/int-arsh/super-To-Do',
-        live_link: 'https://super-to-do.vercel.app/'
-    },
-    {
-        title: 'Palletron',
-        description: 'A web-based interactive tool or game involving color palettes or patterns, developed using JavaScript, CSS, and HTML.',
-        github_link: 'https://github.com/int-arsh/Palletron',
-        live_link: 'https://palletron.vercel.app/'
-    },
-    {
-        title: 'Quotes',
-        description: 'A web app for displaying quotes from quotable api',
-        github_link: 'https://github.com/int-arsh/quotes-react',
-        live_link: 'https://quote-react-xi.vercel.app/'
-    },
-    {
-        title: 'DevConnect',
-        description: 'A JavaScript-powered web app or platform designed to help developers connect, collaborate, or share resources.',
-        github_link: 'https://github.com/int-arsh/DevConnect',
-        live_link: ''
     },
     {
         title: 'sentibot',

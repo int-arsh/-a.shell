@@ -474,3 +474,14 @@ body, html {
   border-radius: inherit;
 }
 
+.terminal a {
+  color: #00ff00;
+  text-decoration: none;
+  transition: color 0.2s, text-decoration 0.2s;
+}
+
+.terminal a:hover {
+  color: #ffff00;
+  text-decoration: underline;
+}
+
