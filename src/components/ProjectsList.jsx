@@ -27,7 +27,7 @@ const projects = [
     },
     {
         title: 'Palletron',
-        description: 'A web-based interactive tool or game involving color palettes or patterns, developed using JavaScript, CSS, and HTML.',
+        description: 'Palletron is a smart color palette generator built with React, Tailwind CSS, and ViteInstantly craft, lock, and export aesthetic color schemes as PNG or CSS with a single click.',
         github_link: 'https://github.com/int-arsh/Palletron',
         live_link: 'https://palletron.vercel.app/'
     },
@@ -51,7 +51,7 @@ const projects = [
     },
     {
         title: 'TuneTrace',
-        description: 'A JavaScript-based web app focused on music or audio visualization and analysis.',
+        description: 'A JavaScript-based web app focused on finding lyrics and artists of a song.',
         github_link: 'https://github.com/int-arsh/TuneTrace',
         live_link: 'https://tune-trace-pink.vercel.app/'
     },
