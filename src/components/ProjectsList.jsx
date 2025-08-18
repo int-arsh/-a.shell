@@ -9,9 +9,9 @@ const projects = [
     },
     {
         title: 'Book-shelf',
-        description: 'Currenty working...',
+        description: 'Personal bookshelf web application designed to act as a digital reading journal',
         github_link: 'https://github.com/int-arsh/book-shelf',
-        live_link: ''
+        live_link: 'https://book-shelf-silk.vercel.app'
     },
     {
         title: 'gmnx',

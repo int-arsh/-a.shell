@@ -17,8 +17,8 @@ const Terminal = () => {
       " ~ I build things with logic and code."
     ],
     projects: [
-      "- Portfolio: github.com/int-arsh/portfolio",
-      "- Shell: github.com/int-arsh/a-shell"
+      "- Projects: <a href='https://a-shell.vercel.app/projects' target='_blank' rel='noopener noreferrer'>https://a-shell.vercel.app/projects</a>",
+      "- Shell: <a href='https://github.com/int-arsh/-a.shell' target='_blank' rel='noopener noreferrer'>https://github.com/int-arsh/-a.shell</a>"
     ],
     connect: [
       " ~ GitHub: <a href='https://github.com/int-arsh' target='_blank' rel='noopener noreferrer'>https://github.com/int-arsh</a>",
