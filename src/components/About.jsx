@@ -178,15 +178,15 @@ function About() {
       <section className="about">
         <h2>{wrapWords('AKASH JAIN')}</h2>
         <p className="about-desc">
-          {wrapWords('I’m into computer science with a strong interest in mathematics, logic, and clean code.')}<br /><br />
-          {wrapWords('I mostly build for the web and enjoy solving problems that need clear thinking.')}
+          {wrapWords('I’m into computer science with a strong interest in mathematics, logic, and clean code.')}<br />
+          {wrapWords('I mostly build for the web and enjoy solving problems.')}
         </p>
       </section>
 
       <canvas
         ref={canvasRef}
         width={220}
-        height={220}
+        height={300}
         className="about-canvas"
         title="Click to attract/repel constellations"
       />
