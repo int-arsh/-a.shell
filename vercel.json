@@ -1,6 +1,8 @@
 {
     "rewrites": [
-      { "source": "/(.*)", "destination": "/" }
+      { "source": "/(.*)", "destination": "/" },
+      {"source": "/bookshelf/:path*", "destination": "https://book-shelf-silk.vercel.app/:path*"},
+      {"source": "/bookshelf", "destination": "https://book-shelf-silk.vercel.app/"}
     ]
   }
   
