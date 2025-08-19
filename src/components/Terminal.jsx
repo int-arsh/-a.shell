@@ -48,7 +48,7 @@ const Terminal = () => {
   const handleCommand = (command) => {
     const cmd = command.trim().toLowerCase();
     if (cmd === "clear") {
-      setHistory([]);
+      setHistory(["> Type 'help' to begin."]);
     } else if (cmd === "matrix") {
       // simulateTyping(responses[cmd]);
       startMatrixEffect();

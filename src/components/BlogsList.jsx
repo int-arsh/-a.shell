@@ -16,6 +16,11 @@ const blogs = [
     name: 'open-source-journey',
     title: 'Open Source Journey',
     excerpt: 'Reflections on contributing to open source projects.'
+  },
+  {
+    name: 'what-really-happens-when-a-number-is-bigger-than-its-data-type',
+    title: 'What Really Happens When a Number Is Bigger Than Its Data Type?',
+    excerpt: 'Exploring the hidden world of number overflow in computers.'
   }
 ];
 

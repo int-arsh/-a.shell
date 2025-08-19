@@ -1,5 +1,5 @@
 import '../App.css';
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 
 const boldWords = [
   'computer', 'science', 'mathematics', 'logic', 'clean', 'code'
@@ -17,6 +17,32 @@ function wrapWords(text) {
 
 function About() {
   const canvasRef = useRef(null);
+  const headingText = 'Akash Jain.';
+  const letters = headingText.split('');
+  const total = letters.length;
+  const [step, setStep] = useState(0); // 0..(2*total-1)
+
+  useEffect(() => {
+    const intervalMs = 300;
+    const id = setInterval(() => {
+      setStep((prev) => (prev + 1) % (total * 2));
+    }, intervalMs);
+    return () => clearInterval(id);
+  }, [total]);
+
+  const renderAnimatedHeading = () => (
+    <span className="heading-letters">
+      {letters.map((ch, i) => {
+        // Fade-in: i <= step; Fade-out: hide from first to last (i > s2 remain)
+        const visible = step < total ? i <= step : i > (step - total);
+        return (
+          <span className={`letter${visible ? ' on' : ''}`} key={i}>
+            {ch === ' ' ? '\u00A0' : ch}
+          </span>
+        );
+      })}
+    </span>
+  );
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -75,7 +101,7 @@ function About() {
 
     canvas.addEventListener('click', onClick);
 
-    function step(dt, nowMs) {
+    function stepNodes(dt, nowMs) {
       // compute pulse factor 0..1
       const pf = pulseStart ? Math.max(0, 1 - (nowMs - pulseStart) / pulseDuration) : 0;
 
@@ -125,11 +151,11 @@ function About() {
         nextAutoPulseMs = nowMs + autoPulseEvery;
       }
 
-      step(dt, nowMs);
+      stepNodes(dt, nowMs);
 
       // clear to paper
       ctx.clearRect(0, 0, W, H);
-      ctx.fillStyle = 'rgba(246, 243, 230, 1)';
+      ctx.fillStyle = 'rgb(0, 0, 0)';
       ctx.fillRect(0, 0, W, H);
 
       // draw links
@@ -176,10 +202,14 @@ function About() {
   return (
     <>
       <section className="about">
-        <h2>{wrapWords('AKASH JAIN')}</h2>
+        <p className="about-desc">{wrapWords('Hi, I am')}</p>
+        <h2>{renderAnimatedHeading()}</h2>
         <p className="about-desc">
-          {wrapWords('I’m into computer science with a strong interest in mathematics, logic, and clean code.')}<br />
-          {wrapWords('I mostly build for the web and enjoy solving problems.')}
+          {wrapWords('I love math,')}
+          <br />
+          {wrapWords('logic, and')}
+          <br />  
+          {wrapWords('code for the web.')}
         </p>
       </section>
 
