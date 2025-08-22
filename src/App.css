@@ -369,13 +369,14 @@ body, html {
     overflow-x: auto;
   }
   .about-section {
-    flex: none;
+    display: flex;
+    flex-direction: row;
     border-right: none;
     border-bottom: 2px solid var(--border-color);
     width: 100%;
-    padding: 12px 10px;
+    /* padding: 12px 10px; */
     justify-content: flex-start;
-    max-height: 400px;
+    max-height: 200px;
   }
   .about {
     padding: 6px 2px;
@@ -393,7 +394,8 @@ body, html {
   .about-canvas {
     margin-top: 0px;
     margin-bottom: 0px;
-    max-height: 120px;
+    height: 300px;
+    width: 200px;
   }
   .dynamic-section {
     padding: 10px 10px;
