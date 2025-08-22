@@ -54,6 +54,42 @@ Your bank balance could suddenly go negative.
 Your algorithm could misbehave without any error message.
 
 In security, attackers even exploit overflow to hack systems.`
+  },
+  {
+    name: 'why 0.1 + 0.2 ≠ 0.3',
+    title: 'Why 0.1 + 0.2 ≠ 0.3 (and What It Teaches Us About Floating-Point Numbers)',
+    content: `If you’ve ever tried this in Python or JavaScript:
+
+0.1 + 0.2 == 0.3
+# False
+
+…you’ve already met the weird world of floating-point arithmetic.
+
+So why does this happen?
+
+Because computers store numbers in binary fractions, not decimals. Just like 1/3 can’t be written exactly in decimal (it becomes 0.3333… forever), the decimal 0.1 can’t be written exactly in binary. It becomes an endless repeating fraction.
+
+When the computer cuts it off to fit in its limited bits, a tiny rounding error sneaks in. Add those errors up (0.1 + 0.2), and you don’t get exactly 0.3, but something like 0.30000000000000004.
+
+Why it matters
+
+In finance, these small errors can turn into big discrepancies.
+
+In machine learning, accumulated rounding errors can nudge results.
+
+In scientific computing, wrong subtraction of close numbers can wipe out precision (a problem called catastrophic cancellation).
+
+How do we deal with it?
+
+Use rounding when printing results (e.g., round(x, 2) in Python).
+
+Avoid subtracting nearly equal numbers when possible — restructure formulas.
+
+Trust the IEEE-754 standard, which ensures consistent results across machines.
+
+The big lesson
+
+Floating-point isn’t “broken.” It’s just an approximation system — like using a calculator that can only show 10 digits. The trick is to know its limits and code accordingly.`
   }
 ];
 

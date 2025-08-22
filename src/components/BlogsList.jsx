@@ -21,6 +21,11 @@ const blogs = [
     name: 'what-really-happens-when-a-number-is-bigger-than-its-data-type',
     title: 'What Really Happens When a Number Is Bigger Than Its Data Type?',
     excerpt: 'Exploring the hidden world of number overflow in computers.'
+  },
+  {
+    name: 'why 0.1 + 0.2 ≠ 0.3',
+    title: 'Why 0.1 + 0.2 ≠ 0.3 (and What It Teaches Us About Floating-Point Numbers)',
+    excerpt: 'Exploring the unexpected results of floating-point numbers.'
   }
 ];
 
