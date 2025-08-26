@@ -26,6 +26,11 @@ const blogs = [
     name: 'why 0.1 + 0.2 ≠ 0.3',
     title: 'Why 0.1 + 0.2 ≠ 0.3 (and What It Teaches Us About Floating-Point Numbers)',
     excerpt: 'Exploring the unexpected results of floating-point numbers.'
+  },
+  {
+    name: 'Why Every Developer Should Use Linux for Development',
+    title: 'Why Every Developer Should Use Linux for Development',
+    excerpt: 'Exploring the advantages of using Linux for development.'
   }
 ];
 
