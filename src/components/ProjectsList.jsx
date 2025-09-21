@@ -1,6 +1,13 @@
 import '../App.css';
 
 const projects = [
+    
+    {
+        title: 'Chattr',
+        description: 'A real-time chat application built with React and Socket.IO, featuring room-based messaging and modern web technologies.',
+        github_link: 'https://github.com/int-arsh/Chattr',
+        live_link: 'https://chattr-tan.vercel.app/'
+    },
     {
         title: 'Nihilist kernel',
         description: 'It is a dialogue engine that explores the intersection of computer science and philosophy.',
