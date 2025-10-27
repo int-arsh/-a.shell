@@ -2,6 +2,12 @@ import '../App.css';
 
 const projects = [
     {
+        title: 'Connect4',
+        description:'A real-time multiplayer Connect4 game server built with FastAPI, MongoDB, and WebSockets.',
+        github_link:'https://github.com/int-arsh/connect4',
+        live_link:''
+    },
+    {
         title: 'Echo',
         description: 'Social App built in Next.js 15, React, Tailwind CSS, MySQL featuring user authentication, real-time chat, and post sharing functionalities.',
         github_link: 'https://github.com/int-arsh/Echo',
@@ -15,12 +21,6 @@ const projects = [
         live_link: 'https://chattr-tan.vercel.app/'
     },
     {
-        title: 'Nihilist kernel',
-        description: 'It is a dialogue engine that explores the intersection of computer science and philosophy.',
-        github_link: 'https://github.com/int-arsh/nihilist-kernel',
-        live_link: 'https://nihilist-kernel.vercel.app/'
-    },
-    {
         title: 'Book-shelf',
         description: 'Personal bookshelf web application designed to act as a digital reading journal',
         github_link: 'https://github.com/int-arsh/book-shelf',
@@ -31,6 +31,12 @@ const projects = [
         description: 'A zsh command-line tool using the Google Gemini API for help with commands, code, and explanations.',
         github_link: 'https://github.com/int-arsh/gmnx',
         live_link: ''
+    },
+    {
+        title: 'Nihilist kernel',
+        description: 'It is a dialogue engine that explores the intersection of computer science and philosophy.',
+        github_link: 'https://github.com/int-arsh/nihilist-kernel',
+        live_link: 'https://nihilist-kernel.vercel.app/'
     },
     {
         title: 'Chess-Engine',
