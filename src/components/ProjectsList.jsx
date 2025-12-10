@@ -8,6 +8,18 @@ const projects = [
         live_link:''
     },
     {
+        title: 'learning logs',
+        description: 'A Django-based web application for tracking learning topics and entries. Users can create topics, add detailed learning entries, and track their progress.',
+        github_link:'https://github.com/int-arsh/learning_log',
+        live_link:'https://learning-log-l5h9.onrender.com/'
+    },
+    {
+        title:'Alien Invasion',
+        description:'A classic arcade-style space shooter game built with Python and Pygame.',
+        github_link:'https://github.com/int-arsh/alien_invasion',
+        live_link:''
+    },
+    {
         title: 'Echo',
         description: 'Social App built in Next.js 15, React, Tailwind CSS, MySQL featuring user authentication, real-time chat, and post sharing functionalities.',
         github_link: 'https://github.com/int-arsh/Echo',
