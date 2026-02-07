@@ -3,21 +3,6 @@ import '../App.css';
 
 const blogs = [
   {
-    name: 'truth-and-simplicity',
-    title: 'Truth and Simplicity',
-    excerpt: 'Exploring the beauty of minimalism and honest design.'
-  },
-  {
-    name: 'building-with-react',
-    title: 'Building with React',
-    excerpt: 'A journey through building a personal site with React and Bun.'
-  },
-  {
-    name: 'open-source-journey',
-    title: 'Open Source Journey',
-    excerpt: 'Reflections on contributing to open source projects.'
-  },
-  {
     name: 'what-really-happens-when-a-number-is-bigger-than-its-data-type',
     title: 'What Really Happens When a Number Is Bigger Than Its Data Type?',
     excerpt: 'Exploring the hidden world of number overflow in computers.'
@@ -31,6 +16,11 @@ const blogs = [
     name: 'Why Every Developer Should Use Linux for Development',
     title: 'Why Every Developer Should Use Linux for Development',
     excerpt: 'Exploring the advantages of using Linux for development.'
+  },
+  {
+    name: 'why-fastapi-exists',
+    title: 'Why FastAPI Exists?',
+    excerpt: 'Exploring the reasons behind the creation of FastAPI.'
   }
 ];
 

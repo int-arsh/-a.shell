@@ -3,21 +3,6 @@ import '../App.css';
 
 const blogs = [
   {
-    name: 'truth-and-simplicity',
-    title: 'Truth and Simplicity',
-    content: `Minimalism is not just a design choice, but a way of life. In this post, we explore how simplicity leads to clarity and truth, both in code and in life.`
-  },
-  {
-    name: 'building-with-react',
-    title: 'Building with React',
-    content: `React and Bun make it easy to build fast, honest, and minimal personal sites. Here is how I approached building mine.`
-  },
-  {
-    name: 'open-source-journey',
-    title: 'Open Source Journey',
-    content: `Contributing to open source is about sharing, learning, and growing together. Here are some lessons from my journey.`
-  },
-  {
     name: 'what-really-happens-when-a-number-is-bigger-than-its-data-type',
     title: 'What Really Happens When a Number Is Bigger Than Its Data Type?',
     content: `Ever wondered what happens when you try to fit more water in a glass than it can hold? It spills.
@@ -55,6 +40,8 @@ Your algorithm could misbehave without any error message.
 
 In security, attackers even exploit overflow to hack systems.`
   },
+
+
   {
     name: 'why 0.1 + 0.2 ≠ 0.3',
     title: 'Why 0.1 + 0.2 ≠ 0.3 (and What It Teaches Us About Floating-Point Numbers)',
@@ -91,6 +78,8 @@ The big lesson
 
 Floating-point isn’t “broken.” It’s just an approximation system — like using a calculator that can only show 10 digits. The trick is to know its limits and code accordingly.`
   },
+
+
   {
     name: 'Why Every Developer Should Use Linux for Development',
     title: 'Why Every Developer Should Use Linux for Development',
@@ -143,18 +132,50 @@ Floating-point isn’t “broken.” It’s just an approximation system — lik
     How networks and permissions are structured.
 
     This knowledge compounds. You don’t just become a better Linux user, you become a better programmer.`
+  },
+
+  {
+    name: 'why-fastapi-exists',
+    title: 'Why FastAPI Exists?',
+    content: `FastAPI is a modern, fast (high-performance), web framework for building APIs with Python 3.7+ based on standard Python type hints.
+
+    It was created because of the lack of open-source, high-performance, easy-to-use APIs for Python, which at the time of its release (in 2018) were either lacking in performance or had a complex API or both.
+
+    
+    Read more: https://takovibe.com/blog/fastapi-vs-flask-async-python-asgi-pydantic/
+    Written by: Me`
   }
 ];
 
 const boldWords = ['blog', 'blogs'];
+const urlRegex = /^https?:\/\/[^\s]+$/;
 
 function wrapWords(text) {
   return text.split(/(\s+)/).map((word, i) => {
+    const trimmed = word.trim();
     const cleanWord = word.replace(/[^a-zA-Z]/g, '').toLowerCase();
-    if (boldWords.includes(cleanWord)) {
-      return word.trim() ? <span className="word" key={i}><strong>{word}</strong></span> : word;
+
+    // Make URLs clickable
+    if (trimmed && urlRegex.test(trimmed)) {
+      return (
+        <a
+          key={i}
+          href={trimmed}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="blog-link"
+        >
+          {trimmed}
+        </a>
+      );
     }
-    return word.trim() ? <span className="word" key={i}>{word}</span> : word;
+
+    // Highlight bold words
+    if (boldWords.includes(cleanWord)) {
+      return trimmed ? <span className="word" key={i}><strong>{word}</strong></span> : word;
+    }
+    
+    return trimmed ? <span className="word" key={i}>{word}</span> : word;
   });
 }
 
